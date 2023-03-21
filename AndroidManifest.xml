@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mydemo">
+
+    <permission
+        android:name="com.ryg.PROVIDER"
+        android:protectionLevel="normal" /> <!-- <permission android:name="com.example.mydemo.permission.RECEIVER_PERMISSION" /> -->
+    <!-- <permission android:name="com.example.mydemo.permission.SEND_PERMISSION" /> -->
+    <!-- <uses-permission android:name="com.example.mydemo.permission.SEND_PERMISSION" /> -->
+    <!-- <permission android:name="com.example.mydemo.permission.RECEIVER_PERMISSION" /> -->
+    <!-- <uses-permission android:name="com.example.mydemo.permission.RECEIVER_PERMISSION" /> -->
+    <permission android:name="com.example.mydemo.permission.SEND_PERMISSION" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyDemo">
+        <activity
+            android:name=".ThirdActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".DemoActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.example.mydemo.permission.SEND_PERMISSION">
+            <intent-filter>
+                <action android:name="com.example.mydemo.Action.Msg" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name=".BookProvider"
+            android:authorities="com.ryg.chapter_2.book.provider"
+            android:permission="com.ryg.PROVIDER"
+            android:process=":provider" />
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
