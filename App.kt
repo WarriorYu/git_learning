@@ -7,5 +7,6 @@ class App : Application(){
         super.onCreate()
 	// 修改第一次
 	// 修改第二次
+	// 添加add命令
     }
 }
