@@ -6,5 +6,6 @@ class App : Application(){
     override fun onCreate() {
         super.onCreate()
 	// 添加点代码
+	// 改点
     }
 }
