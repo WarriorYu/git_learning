@@ -12,5 +12,6 @@ class App : Application(){
 	// 我是git_learning,我修改后push了，但是002没有pull
 	// 001 修改
 	// 002修改了同样的位置
+	// 001修改了
     }
 }
