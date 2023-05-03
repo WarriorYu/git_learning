@@ -4,6 +4,7 @@ import android.app.Application
 
 class App : Application(){
     override fun onCreate() {
+	// 我是002，我修改了不同位置的代码，没有pull就push
         super.onCreate()
 	// 修改第一次
 	// 修改第二次
